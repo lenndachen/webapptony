@@ -1,14 +1,12 @@
 import app from 'firebase/app';
-import 'firebase/auth';
 
-var firebaseConfig = {
-  apiKey: "AIzaSyBjEn2Mn4fH3XzZqJx7i1FISpCy1mjqI2g",
-  authDomain: "web-app-tony.firebaseapp.com",
-  databaseURL: "https://web-app-tony.firebaseio.com",
-  projectId: "web-app-tony",
-  storageBucket: "",
-  messagingSenderId: "1030548491817",
-  appId: "1:1030548491817:web:0496cca0b6857ab67b9638"
+const firebaseConfig = {
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 
 class Firebase {
