@@ -27,6 +27,28 @@
     <title>React App</title>
   </head>
   <body>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBjEn2Mn4fH3XzZqJx7i1FISpCy1mjqI2g",
+    authDomain: "web-app-tony.firebaseapp.com",
+    databaseURL: "https://web-app-tony.firebaseio.com",
+    projectId: "web-app-tony",
+    storageBucket: "",
+    messagingSenderId: "1030548491817",
+    appId: "1:1030548491817:web:0496cca0b6857ab67b9638"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
