@@ -2,16 +2,6 @@
     font-size: 12px;
 }
 
-.privacyclause {
-    border-style: solid;
-    border-color: red;
-    border-width: 2px;
-    margin-left: 30px;
-    margin-right: 30px;
-    box-shadow: .5px .5px;
-}
-
-
 .radiobuttons {
     display: flex;
     justify-content: center;
@@ -21,4 +11,30 @@
     display: flex;
     justify-content: center;
 
+}
+
+.wholeform {
+    display: grid;
+    .header {
+        max-width: $maxWidth;
+        margin: 0 auto;
+    }
+ 
+
+    .logo-testdiagnosis {
+        float: right;
+        height: 8%;
+        width: 7%;
+    }
+
+    .privacyclause {
+        border-style: solid;
+        border-color: red;
+        border-width: 2px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 90px;
+        box-shadow: .5px .5px;
+    }
+    
 }

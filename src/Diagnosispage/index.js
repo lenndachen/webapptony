@@ -1,8 +1,13 @@
 import React from 'react'
+import logo from '../Assets/logo.PNG'
 
 const Diagnosis = () => (
-    <div>
+    <div className="wholeform">
     <form>
+       <div className="header">
+        <h4 className="title-testdiagnosis">Mental Illness Diagnosis</h4>
+        <img className="logo-testdiagnosis" src={logo} alt="tonylogo" />
+       </div>
         <label className = "Name">
             <p className="privacyclause">**Providing your full name will help us manage 
                 <br /> our files and have an organizing list of people that have taken the test.Your information is
