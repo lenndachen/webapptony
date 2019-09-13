@@ -15,11 +15,16 @@
 
 .wholeform {
     display: grid;
+
     .header {
-        max-width: $maxWidth;
-        margin: 0 auto;
+        margin: 0;
+        padding: 0;
+        background-color: blue;
     }
- 
+
+    .title-testdiagnosis{
+        float: left;
+    }
 
     .logo-testdiagnosis {
         float: right;
