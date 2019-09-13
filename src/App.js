@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Diagnosis from './Components/Diagnosispage'
+import Diagnosis from './Diagnosispage'
 
 function App() {
   return (
