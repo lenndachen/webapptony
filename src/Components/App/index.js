@@ -15,6 +15,7 @@ import AuthUserContext from '../Session'
 import withAuthentication from '../Session'
 import TestDiagnose from '../TestDiagnose';
 import TalkAboutYourDay from '../TalkAboutYourDay';
+import DiagnosisPage from '../Diagnosispage';
 
 const App = () => (
     <Router>
@@ -29,6 +30,7 @@ const App = () => (
       <Route path={ROUTES.ACCOUNT} component={Account} />
       <Route path={ROUTES.ADMIN} component={Admin} />
       <Route path={ROUTES.TALK_ABOUT_DAY} component={TalkAboutYourDay} />
+      <Route path={ROUTES.DIAGNOSIS_PAGE} component={DiagnosisPage} />
   </Router>
 )
 
