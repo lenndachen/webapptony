@@ -14,6 +14,7 @@ import {withFirebase} from '../Firebase'
 import AuthUserContext from '../Session'
 import withAuthentication from '../Session'
 import TestDiagnose from '../TestDiagnose';
+import TalkAboutYourDay from '../TalkAboutYourDay';
 
 const App = () => (
     <Router>
@@ -27,6 +28,7 @@ const App = () => (
       <Route path={ROUTES.MENU} component={Menu} />
       <Route path={ROUTES.ACCOUNT} component={Account} />
       <Route path={ROUTES.ADMIN} component={Admin} />
+      <Route path={ROUTES.TALK_ABOUT_DAY} component={TalkAboutYourDay} />
   </Router>
 )
 

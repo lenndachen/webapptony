@@ -34,7 +34,10 @@ const Menu = () => (
     <h1>Test Diagnosis</h1>
     <ul>
       <li>
-        <Link to={ROUTES.RESOURCES}>Test Diagnosis</Link>
+        <Link to={ROUTES.TEST_DIAGNOSE}>Test Diagnosis</Link>
+      </li>
+      <li>
+        <Link to={ROUTES.TALK_ABOUT_DAY}>Talk about your day</Link>
       </li>
       <li>
         <Link to={ROUTES.RESOURCES}>Resources</Link>
