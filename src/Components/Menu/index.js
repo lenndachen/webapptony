@@ -7,6 +7,16 @@ import withAuthorization, { AuthUserContext } from '../Session'
 
 import SignOutButton from '../SignOut'
 
+/*class Menu extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      textBox: "",
+
+    }
+  }
+}*/
+
 /*<form onSubmit={this.onSubmit}>
                 <input
           name="talkbox"
@@ -21,8 +31,11 @@ import SignOutButton from '../SignOut'
 const Menu = () => (
   <AuthUserContext.Consumer>
   {authUser => (<div>
-    <h1>Talk about your day and/or whats troubling you here.</h1>
+    <h1>Test Diagnosis</h1>
     <ul>
+      <li>
+        <Link to={ROUTES.RESOURCES}>Test Diagnosis</Link>
+      </li>
       <li>
         <Link to={ROUTES.RESOURCES}>Resources</Link>
       </li>
