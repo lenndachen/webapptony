@@ -16,9 +16,11 @@ import withAuthentication from '../Session'
 import TestDiagnose from '../TestDiagnose';
 import TalkAboutYourDay from '../TalkAboutYourDay';
 import DiagnosisPage from '../Diagnosispage';
+import Navigation1 from '../Navigation'
 
 const App = () => (
     <Router>
+    <Navigation1 />
       <Route exact path={ROUTES.LANDING} component={Landing} />
       <Route path={ROUTES.SIGN_UP} component={SignUp} />
       <Route path={ROUTES.SIGN_IN} component={SignIn} />

@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../../Assets/logo.PNG'
 
+
 const Diagnosis = () => (
     <div className="wholeform">
     <form>
