@@ -1,6 +1,5 @@
 export const LANDING = '/';
 export const OPTIONS = '/options';
-export const TEST_DIAGNOSE = '/testdiagnose';
 export const RATING = '/rating';
 export const RESOURCES = '/resources';
 export const SIGN_UP = '/signup';

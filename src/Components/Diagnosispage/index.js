@@ -1,7 +1,82 @@
 import React from 'react'
 import logo from '../../Assets/logo.PNG'
+import { AuthUserContext } from '../Session';
 
-const Diagnosis = () => (
+class Diagnosis extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {}
+    }
+
+   lineOfButtons (questionNum, inputStyle) {
+
+        var arr = []
+    
+        for (var i = 0; i < 5; i++)
+            arr.push(<input type="radio" 
+                    style={inputStyle} name={questionNum} value={String(i + 1)} /*onChange = {}*/></input>)
+    
+        return arr;
+    }
+
+    createListOfQuestions (question) {
+
+        var arr = [];
+
+        const inputStyle = {
+            float: 'right',
+          };
+
+        for (var i = 0; i < question.length; i++)
+            arr.push(<div className = {"Question " + String(i + 1)}><p>{question[i]}</p>
+            {this.lineOfButtons("Question " + String(i + 1), inputStyle)}
+            </div>)
+
+            return arr;
+    }
+    
+    render() {
+
+        const questions = 
+`I felt that my worry was out of control.
+I felt restless, agitated, frantic or tense.
+I have had trouble sleeping.
+My heart would skip beat, was pounding, or my heart rate increased.
+I was sweating profusely.
+My hands, legs or entire body were shaking, trembling, or felt tingly.
+I had difficulty breathing or swallowing
+I had pain in my chest, almost like I was having a heart attack.
+I felt sick to my stomach, like I was going to throw up, or had diarrhea.
+I felt dizzy, my head was spinning, or felt like I was going to faint. 
+I had cold or hold flashes.
+I was scared that I would lose control, go crazy, or die. 
+How frequently did you experience panic attacks in the last 6 months?
+How often have you purposely avoided situations or activities in which you might experience a panic attack?
+Have you been in the last 6 months haunted by memories, flashbacks, or nightmares about the event.
+How often are you expecting the worst of others and of situations?
+How often have you felt fear, guilt, shame, or blamed myself or others for what happened?
+How often have you feel like you don't have interest in activities that you used to enjoy?
+How often are you irritable or enraged because of minor issues(or for no reason at all)?
+How often have you become reckless or took unnecessary risks?
+How often are you excessively vigilant, tense or ""on guard"" or jumpy?
+How often have you had trouble focusing, concentrating, or remembering things?
+How often are you purposely avoided anything that reminded me of the event?
+How often are you unable to feel happiness, contentment, joy, or love, or had trouble connecting with people?
+How often are you frequently feeling sad like you can't go on?
+How often have you felt you have stopped doing fun things that you used to enjoy?
+How often have you noticed that you have lost or gained weight without trying to, or your appetite has changed?
+How often have you felt slowed down compared to your usually pace?
+How often have you felt exhausted?
+How often are you feeling worthless or guilty?
+How often are you thinking about death or taking my own life?
+How often have you felt sadness have made it difficult for you to function in your personal, social, or work life?
+How often have you experienced an unusually elevated mood where I was extremely elevated energetic or irritable?
+How often have you had a sudden burst of confidence or felt like you are better than anyone else?`
+
+    var question = questions.split(/\r?\n/)
+    var arr = [];
+
+        return (
     <div className="wholeform">
     <form>
        <div className="header">
@@ -15,10 +90,14 @@ const Diagnosis = () => (
             </p>
         </label>
         <div className="together"><div className="wordname">Name</div> <input className="textname" type="text" name="name" /> </div>
-        
-        
+        {arr}
     </form>
+    {this.createListOfQuestions(question)}
     </div>
-);
+    );
+    
+    }
+}
+
 
 export default Diagnosis;
