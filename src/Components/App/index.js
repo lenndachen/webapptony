@@ -17,11 +17,12 @@ import TestDiagnose from '../TestDiagnose';
 import TalkAboutYourDay from '../TalkAboutYourDay';
 import DiagnosisPage from '../Diagnosispage';
 import Navigation from '../Navigation';
+import Resourcespage from '../Resources';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       authUser: null,
     };
@@ -45,7 +46,7 @@ class App extends Component {
       <Route path={ROUTES.SIGN_IN} component={SignIn} />
       <Route path={ROUTES.OPTIONS} component={PasswordForget} />
       <Route path={ROUTES.TEST_DIAGNOSE} component={TestDiagnose} />
-      <Route path={ROUTES.RESOURCES} component={Resources} />
+      <Route path={ROUTES.RESOURCES} component={Resourcespage} />
       <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
       <Route path={ROUTES.MENU} component={Menu} />
       <Route path={ROUTES.ACCOUNT} component={Account} />
