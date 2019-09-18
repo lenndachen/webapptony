@@ -30,19 +30,19 @@ import SignOutButton from '../SignOut'
 
 const Menu = () => (
   <AuthUserContext.Consumer>
-  {authUser => (<div>
-    <ul>
+  {authUser => (
+    <div>
+    <ul className="menu-content-list">
       <li>
-        <Link to={ROUTES.TEST_DIAGNOSE}>Test Diagnosis</Link>
+        <Link className="menu-content" to={ROUTES.TEST_DIAGNOSE}>Test Diagnosis</Link>
       </li>
       <li>
-        <Link to={ROUTES.TALK_ABOUT_DAY}>Talk about your day</Link>
+        <Link className="menu-content" to={ROUTES.TALK_ABOUT_DAY}>Talk about your day</Link>
       </li>
       <li>
-        <Link to={ROUTES.RESOURCES}>Resources</Link>
+        <Link className="menu-content resources-list" to={ROUTES.RESOURCES}>Resources</Link>
       </li>
     </ul>
-    <SignOutButton/>
   </div>)}
   </AuthUserContext.Consumer>
 );
