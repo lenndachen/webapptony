@@ -4,7 +4,6 @@ import * as ROUTES from '../../constants/routes';
 
 const Landing = () => (
   <div>
-    <h1>Tony</h1>
     <ul>
       <li>
         <Link to={ROUTES.SIGN_IN}>Sign In</Link>
@@ -12,6 +11,7 @@ const Landing = () => (
       <li>
         <Link to={ROUTES.SIGN_UP}>Sign Up</Link>
       </li>
+      
     </ul>
   </div>
 );
