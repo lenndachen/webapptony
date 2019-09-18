@@ -16,15 +16,18 @@ import withAuthentication from '../Session'
 import TestDiagnose from '../TestDiagnose';
 import TalkAboutYourDay from '../TalkAboutYourDay';
 import DiagnosisPage from '../Diagnosispage';
+import Navigation1 from '../Navigation';
+import Resourcespage from '../Resources';
 
 const App = () => (
     <Router>
+    <Navigation1 />
       <Route exact path={ROUTES.LANDING} component={Landing} />
       <Route path={ROUTES.SIGN_UP} component={SignUp} />
       <Route path={ROUTES.SIGN_IN} component={SignIn} />
       <Route path={ROUTES.OPTIONS} component={PasswordForget} />
       <Route path={ROUTES.TEST_DIAGNOSE} component={TestDiagnose} />
-      <Route path={ROUTES.RESOURCES} component={Resources} />
+      <Route path={ROUTES.RESOURCES} component={Resourcespage} />
       <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
       <Route path={ROUTES.MENU} component={Menu} />
       <Route path={ROUTES.ACCOUNT} component={Account} />
