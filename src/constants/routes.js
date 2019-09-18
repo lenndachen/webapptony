@@ -5,6 +5,7 @@ export const RATING = '/rating';
 export const RESOURCES = '/resources';
 export const SIGN_UP = '/signup';
 export const SIGN_IN = '/signin';
+export const SIGN_OUT = '/signout';
 export const MENU = '/menu';
 export const ACCOUNT = '/account';
 export const ADMIN = '/admin';

@@ -31,7 +31,6 @@ import SignOutButton from '../SignOut'
 const Menu = () => (
   <AuthUserContext.Consumer>
   {authUser => (<div>
-    <h1>Test Diagnosis</h1>
     <ul>
       <li>
         <Link to={ROUTES.TEST_DIAGNOSE}>Test Diagnosis</Link>
