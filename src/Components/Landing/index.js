@@ -15,7 +15,8 @@ const Landing = () => (
           <li>
               <img className="picture photo4"  src={writingdown} alt="writing hands" />
           </li>
-              <button> <Link className="inside-pic-btn" to={ROUTES.SIGN_IN}>Sign In</Link> </button>
+           <Link className="inside-pic-btn" to={ROUTES.SIGN_IN}>Sign In</Link>
+           
         </ul>
       </div>
 </div>
