@@ -1,7 +1,7 @@
 import React from 'react';
 
 const TalkAboutYourDay = () => (
-  <div>
+  <div className="talkday">
     <h1>Talk about your day page.</h1>
   </div>
 );
