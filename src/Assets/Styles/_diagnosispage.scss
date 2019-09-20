@@ -19,7 +19,6 @@
     .header {
         margin: 0;
         padding: 0;
-        background-color: blue;
     }
 
     .title-testdiagnosis{
@@ -42,4 +41,39 @@
         box-shadow: .5px .5px;
     }
     
+}
+
+.two{
+    display: grid;
+    height: 200px;
+    grid-template-columns: 200px;
+    grid-template-rows: repeat(6, 1fr);
+    position: relative;
+    left: 40%;
+    padding: 5px;
+}
+
+.header {
+    grid-row: 2 / 4;
+}
+
+.together {
+    grid-row: span 2 / 7;
+}
+
+.diagnosis-submitbutton {
+    width: 150px;
+    position: relative;
+    left: 45%;
+}
+
+.textname {
+    width: 150px;
+    height: 20px;
+}
+
+.wordname {
+    padding: 10px;
+    position: relative;
+    bottom: 5px;
 }
