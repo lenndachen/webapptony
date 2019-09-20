@@ -13,12 +13,11 @@ import * as ROUTES from '../../constants/routes';
 import {withFirebase} from '../Firebase'
 import AuthUserContext from '../Session'
 import withAuthentication from '../Session'
-import TestDiagnose from '../TestDiagnose';
 import TalkAboutYourDay from '../TalkAboutYourDay';
 import DiagnosisPage from '../Diagnosispage';
 import Navigation from '../Navigation';
 import Resourcespage from '../Resources';
-
+import Diagnose from '../Diagnosispage'
 
 class App extends Component {
   constructor(props) {
@@ -45,7 +44,7 @@ class App extends Component {
       <Route path={ROUTES.SIGN_UP} component={SignUp} />
       <Route path={ROUTES.SIGN_IN} component={SignIn} />
       <Route path={ROUTES.OPTIONS} component={PasswordForget} />
-      <Route path={ROUTES.TEST_DIAGNOSE} component={TestDiagnose} />
+      <Route path={ROUTES.TEST_DIAGNOSE} component={Diagnose} />
       <Route path={ROUTES.RESOURCES} component={Resourcespage} />
       <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
       <Route path={ROUTES.MENU} component={Menu} />
