@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import logo1 from '../../Assets/logo1.PNG'
+import logo1 from '../../Assets/logos/logo1.PNG'
 import SignOutButton from '../SignOut'
 
 const Navigation = ({authUser}) => {
