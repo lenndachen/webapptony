@@ -1,5 +1,4 @@
 import React from 'react'
-import logo from '../../Assets/logos/logo.PNG'
 
 class Diagnosis extends React.Component {
     constructor(props){
@@ -78,23 +77,25 @@ How often have you had a sudden burst of confidence or felt like you are better 
     var arr = [];
 
         return (
+
     <div className="wholeform">
     <form>
-       <div className="header">
-        <h4 className="title-testdiagnosis">Mental Illness Diagnosis</h4>
-        <img className="logo-testdiagnosis" src={logo} alt="tonylogo" />
-       </div>
-        <label className = "Name">
-            <p className="privacyclause">**Providing your full name will help us manage 
-                <br /> our files and have an organizing list of people that have taken the test.Your information is
-                <br /> kept confidential and NONE of it is sold to separate parties.** 
-            </p>
-        </label>
-        <div className="together"><div className="wordname">Name</div> <input className="textname" type="text" name="name" /> </div>
-        {arr}
-    </form>
-    {this.createListOfQuestions(question)}
-    </div>
+        <div className="two">
+            <div className="header">
+                <h4 className="title-testdiagnosis">Mental Illness Diagnosis</h4>
+            </div>
+        <div className="together">
+            <div className="wordname">Name</div> 
+            <input className="textname" type="text" name="name" placeholder="Your name goes here." /> 
+        </div>
+            <div>
+                {arr}
+            </div>
+        </div>
+     </form>
+     <div> {this.createListOfQuestions(question)} </div>
+     <button className="diagnosis-submitbutton">Submit </button>
+     </div>
     );
     
     }
