@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import females from '../../Assets/picsforlandingpage/females.jpg'
-import handgestures from "../../Assets/picsforlandingpage/handgestures.jpg"
-import talking from "../../Assets/picsforlandingpage/talking.jpg";
 import writingdown from "../../Assets/picsforlandingpage/writingdown.png";
 
 const Landing = () => (
