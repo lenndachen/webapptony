@@ -1,6 +1,5 @@
 import React from 'react'
-import logo from '../../Assets/logo.PNG'
-import { AuthUserContext } from '../Session';
+import logo from '../../Assets/logos/logo.PNG'
 
 class Diagnosis extends React.Component {
     constructor(props){

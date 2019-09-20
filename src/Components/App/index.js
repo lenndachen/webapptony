@@ -5,7 +5,7 @@ import SignUp from '../SignUp';
 import SignIn from '../SignIn';
 import SignOutButton from '../SignOut';
 import PasswordForget from '../PasswordForget';
-import Menu from '../Menu';
+import Menu from '../SignedInMenu';
 import Account from '../Account';
 import Admin from '../Admin';
 import Resources from '../Resources'
