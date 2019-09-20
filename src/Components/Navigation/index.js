@@ -13,18 +13,14 @@ return (
 
   const NavigationAuth = () => (
   <nav className="navbar">
-    <div className="logo-wrapper"><img src={logo1} alt=""></img></div>
-   
+    <div className="logo-wrapper">
+      <Link to={ROUTES.LANDING}><img src={logo1} alt="logo"/></Link>
+    </div>
     <ul className="links-component">
-      <li>
-        <Link className="link-buttons" to={ROUTES.SIGN_IN}>Sign In</Link>
-      </li>
       <li>
         <Link className="link-buttons" to={ROUTES.SIGN_UP}>Sign Up</Link>
       </li>
-      <li>
-        <Link className="link forget-password" to={ROUTES.PASSWORD_FORGET}>Forgot Password?</Link>
-      </li>
+
     </ul>
 
   </nav>
@@ -32,10 +28,11 @@ return (
 
 const NavigationNonAuth = () => (
   <nav className="navbar">
-    <div className="logo-wrapper"><img src={logo1} alt=""></img></div>
+    <div className="logo-wrapper">
+    <Link to={ROUTES.LANDING}><img src={logo1} alt=""></img></Link></div>
     <ul className="links-component">
       <div className="signoutbutton">
-      <SignOutButton/>
+      <Link to={ROUTES.LANDING}>Sign Out</Link>
       </div>
     </ul>
   </nav>
