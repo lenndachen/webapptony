@@ -5,7 +5,9 @@ import { AuthUserContext } from '../Session';
 class Diagnosis extends React.Component {
     constructor(props){
         super(props);
-        this.state = {}
+        this.state = {
+            user: []
+             }
     }
 
    lineOfButtons (questionNum, inputStyle) {

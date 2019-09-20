@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Navigation from '../Navigation';
 import Landing from '../Landing';
 import SignUp from '../SignUp';
 import SignIn from '../SignIn';
+import SignOutButton from '../SignOut';
 import PasswordForget from '../PasswordForget';
 import Menu from '../Menu';
 import Account from '../Account';
@@ -14,22 +14,49 @@ import {withFirebase} from '../Firebase'
 import AuthUserContext from '../Session'
 import withAuthentication from '../Session'
 import TalkAboutYourDay from '../TalkAboutYourDay';
-import Diagnosis from '../Diagnosispage';
+import DiagnosisPage from '../Diagnosispage';
+import Navigation from '../Navigation';
+import Resourcespage from '../Resources';
+import Diagnose from '../Diagnosispage'
 
-const App = () => (
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      authUser: null,
+    };
+  }
+
+  componentDidMount() {
+     this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
+      authUser
+        ? this.setState({ authUser })
+        : this.setState({ authUser: null });
+    });
+  }
+
+  render() {
+    return (
+    
     <Router>
+    <Navigation authUser={this.state.authUser}/>
       <Route exact path={ROUTES.LANDING} component={Landing} />
       <Route path={ROUTES.SIGN_UP} component={SignUp} />
       <Route path={ROUTES.SIGN_IN} component={SignIn} />
       <Route path={ROUTES.OPTIONS} component={PasswordForget} />
-      <Route path={ROUTES.RESOURCES} component={Resources} />
+      <Route path={ROUTES.TEST_DIAGNOSE} component={Diagnose} />
+      <Route path={ROUTES.RESOURCES} component={Resourcespage} />
       <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
       <Route path={ROUTES.MENU} component={Menu} />
       <Route path={ROUTES.ACCOUNT} component={Account} />
       <Route path={ROUTES.ADMIN} component={Admin} />
       <Route path={ROUTES.TALK_ABOUT_DAY} component={TalkAboutYourDay} />
-      <Route path={ROUTES.DIAGNOSIS_PAGE} component={Diagnosis} />
+      <Route path={ROUTES.DIAGNOSIS_PAGE} component={DiagnosisPage} />
+      <Route path={ROUTES.SIGN_OUT} component={SignOutButton} />
   </Router>
-)
+    );
+  }
+}
+
 
 export default withAuthentication(App);
