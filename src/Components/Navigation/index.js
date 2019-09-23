@@ -6,7 +6,7 @@ import SignOutButton from "../SignOut"
 import { AuthUserContext } from "../Session";
 
 
-const Navigation = () => (
+const Navigation = ( authUser) => (
   <div>
     <AuthUserContext.Consumer>
       {authUser =>
