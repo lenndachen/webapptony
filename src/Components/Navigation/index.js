@@ -60,6 +60,6 @@ const NavigationNonAuth = () => (
       </ul>
     </div>
   </div>
-)
+);
 
 export default Navigation;
