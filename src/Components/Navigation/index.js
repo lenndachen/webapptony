@@ -2,35 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 import logo1 from '../../Assets/logos/logo1.PNG'
-import menu from "../../Components/Menu";
-
-
+import SignOutButton from "../SignOut"
+import { AuthUserContext } from "../Session";
 
 
 const Navigation = () => (
   <div>
-  <AuthUserConectext.Comsumer>
-    {authUser => 
-      authUser ? (
-        <NavigationAuth authUser={authUser} />
-      ) : (
-        <NavigationNonAuth />
-      )}
-  </AuthUserConectext.Comsumer>
+    <AuthUserContext.Consumer>
+      {authUser =>
+        authUser ? <NavigationAuth /> : <NavigationNonAuth />
+      }
+    </AuthUserContext.Consumer>
   </div>
-)
+);
 
   const NavigationAuth = () => (
   <div className="navbar">
+
     <div className="logo-wrapper">
       <Link to={ROUTES.LANDING}><img src={logo1} alt="logo"/></Link>
     </div>
+
     <ul className="links-component">
       <li>
         <Link className="link-buttons" to={ROUTES.ACCOUNT}>Account</Link>
       </li>
       <li>
-        <Link className="link-buttons" to={ROUTES.HOME}>Home</Link>
+        <Link className="link-buttons" to={ROUTES.MENU}>Menu</Link>
       </li>
       <li>
         <Link className="link-buttons" to={ROUTES.LANDING}>Landing</Link>
@@ -38,22 +36,20 @@ const Navigation = () => (
       <li>
         <Link className="link-buttons" to={ROUTES.DIAGNOSIS_PAGE}>Diagnosis Page</Link>
       </li>
-        {!!authUser.roles[ROLES.ADMIN]&& (
-          <li>
-            <Link to={ROUTES.ADMIN} className="a">Admin</Link>
-          </li>
-        )}
         <li>
-        <SignOutButton /> 
+            <Link to={ROUTES.ADMIN} className="link-buttons hidden-admin">Admin</Link>
+        </li>
+        <li>
+        <Link to={ROUTES.SIGN_OUT} className="link-buttons"><SignOutButton/> </Link>
         </li>
       </ul>
   </div>
 );
 
 const NavigationNonAuth = () => (
-  <nav className="navbar">
+  <div className="navnonauth-wrapper">
     <div className="logo-wrapper">
-      <Link to={ROUTES.LANDING}><img src={logo1} alt=""></img></Link>\
+      <Link to={ROUTES.LANDING}><img src={logo1} alt=""></img></Link>
     </div>
     <div>
       <ul>
@@ -63,7 +59,7 @@ const NavigationNonAuth = () => (
         </li>
       </ul>
     </div>
-  </nav>
+  </div>
 )
 
 export default Navigation;

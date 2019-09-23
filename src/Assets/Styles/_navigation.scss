@@ -43,4 +43,19 @@ background: blue;
     top: -20px;
 }
 
+.navnonauth-wrapper {
+    height: 0%;
+    background: blue;
+    display: flex;
+
+    .links-containernonauth{
+    display: flex;
+    float: left;
+    padding: 10px;
+    position: relative;
+    margin: 20px 0 0 100px;
+    justify-content: right;
+    }
+}
+
 
