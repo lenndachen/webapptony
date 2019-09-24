@@ -25,7 +25,20 @@ body {
     padding: 30px;
 }
 
-.inside-pic-btn{
+.signin-modal{
+  background-color:lightgray ;
+  border: solid aqua;
+  padding: 10px;
+  width: 350px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.inside-pic-signin{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,6 +54,26 @@ body {
   width: 150px;
   text-align: center;
 }
+
+.cancelbutton{
+  background-color: red;
+  border: 0;
+  color: #fefbef;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  line-height: 3;
+  margin-top: 1.5rem;
+  width: 45%;
+  border-radius: 10px;
+  float: right;
+  position: relative;
+  left: -0px;
+}
+
+.padding-button{
+ border: 20px;
+}
+
 
 
 

@@ -5,10 +5,8 @@ background: blue;
 
 
  .logo-wrapper {
-     width: 10%;
-     padding: 0.4em;
-     padding-left: 10px;
-     border-radius: 10px;
+     width: 9%;
+     border-radius: 20px;
  }
  .links-component{
      display: flex;
@@ -47,15 +45,23 @@ background: blue;
     height: 0%;
     background: blue;
     display: flex;
-
-    .links-containernonauth{
-    display: flex;
-    float: left;
-    padding: 10px;
-    position: relative;
-    margin: 20px 0 0 100px;
-    justify-content: right;
-    }
 }
 
+.links-nonauthalltogether {
+    width: 100%;
+}
 
+.ul-nonauth {
+    float: right;
+}
+
+.ul-nonauth li {
+    display: inline-block;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.navnonauth-wrapper {
+    padding: 10px;
+    padding-top: -8px;
+}

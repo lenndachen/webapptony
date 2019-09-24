@@ -19,6 +19,7 @@ import Navigation from '../Navigation';
 import Resourcespage from '../Resources';
 import Diagnose from '../Diagnosispage'
 
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +33,7 @@ class App extends Component {
       authUser
         ? this.setState({ authUser })
         : this.setState({ authUser: null });
+     
     });
   }
 
