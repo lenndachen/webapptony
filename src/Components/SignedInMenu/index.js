@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Resources from '../Resources'
 import withAuthorization, { AuthUserContext } from '../Session'
-import SignOutButton from '../SignOut'
+
 
 /*class Menu extends React.Component {
   constructor(props) {
@@ -18,7 +16,7 @@ import SignOutButton from '../SignOut'
 
 /*<form onSubmit={this.onSubmit}>
                 <input
-          name="talkbox"
+          name=""
           value={username}
           onChange={this.onChange}
           type="text"

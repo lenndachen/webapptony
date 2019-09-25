@@ -24,9 +24,14 @@ const INITIAL_STATE = {
 class SignUpFormBase extends Component {
   constructor(props) {
     super(props);
-
-    this.state = { ...INITIAL_STATE };
-  }
+      this.state = {
+        username: this.props.username,
+        email: this.props.email,
+        passwordOne: this.props.passwordOne,
+        passwordTwo: this.props.passwordTwo,
+        error: null
+      }
+    }
 
   onSubmit = event => {
     const { username, email, passwordOne } = this.state;

@@ -5,10 +5,8 @@ background: blue;
 
 
  .logo-wrapper {
-     width: 10%;
-     padding: 0.4em;
-     padding-left: 10px;
-     border-radius: 10px;
+     width: 9%;
+     border-radius: 20px;
  }
  .links-component{
      display: flex;
@@ -43,4 +41,27 @@ background: blue;
     top: -20px;
 }
 
+.navnonauth-wrapper {
+    height: 0%;
+    background: blue;
+    display: flex;
+}
 
+.links-nonauthalltogether {
+    width: 100%;
+}
+
+.ul-nonauth {
+    float: right;
+}
+
+.ul-nonauth li {
+    display: inline-block;
+    padding: 10px;
+    padding-top: 30px;
+}
+
+.navnonauth-wrapper {
+    padding: 10px;
+    padding-top: -8px;
+}
