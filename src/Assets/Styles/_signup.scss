@@ -1,0 +1,100 @@
+.formsignup {
+    background-color: lightgrey;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 52.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    padding-left: 30px;
+    padding-top: 40px;
+}
+
+.usernamesignup{
+    padding: 10px;
+    position: absolute;
+    top: 16%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    margin: 10x 0;
+    border-radius: 5px;
+}
+
+.emailsignup{
+    padding: 10px;
+    position: absolute;
+    top: 28%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.passwordsignup {
+    padding: 10px;
+    position: absolute;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.passwordtwosignup{
+    padding: 10px;
+    position: absolute;
+    top: 53%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.submitsignupbtn{
+    position: absolute;
+    top: 70%;
+    left: 45%;
+    background-color: aqua;
+    border-radius: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.divsignuppage{
+    width: 100%;
+}
+.signupformtitle{
+    background-color: lightskyblue;
+    border: green solid 2.5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+    display: block;
+    padding: 15px;
+    position: absolute;
+    width: 50%;
+    left: 22.5%;
+  }
+
+  .divsignupformtitle{
+    text-align: center;
+    top: 40%;
+    left: 60%;
+  }
+
+.divsignuppage {
+    padding: 5px;
+    width: 400px;
+}
+
+.spacesignup{
+    padding: 10px;
+}
+  
