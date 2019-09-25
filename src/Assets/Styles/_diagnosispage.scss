@@ -46,21 +46,19 @@
         position: relative;
         top: -31px;
     }
+    
 }
 
-.diagnosis-page-submit {
-    width: 200px;
+.two{
+    display: grid;
+    height: 80px;
+    grid-template-columns: 200px;
+    grid-template-rows: repeat(6, 1fr);
     position: relative;
-    top: 30px;
-
-}
-
-.submit-button {
-    text-align: center;
+    left: 40%;
 }
 
 .header {
-    text-align: center;
     grid-row: 2 / 4;
 }
 
@@ -92,4 +90,19 @@
 
 .textname {
     height: 20pt;
+.diagnosis-submitbutton {
+    width: 150px;
+    position: relative;
+    left: 45%;
+}
+
+.textname {
+    width: 150px;
+    height: 20px;
+}
+
+.wordname {
+    padding: 10px;
+    position: relative;
+    bottom: 5px;
 }

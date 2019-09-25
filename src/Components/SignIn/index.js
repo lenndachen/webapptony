@@ -20,8 +20,12 @@ const INITIAL_STATE = {
 
 class SignInFormBase extends Component {
   constructor(props) {
-    super(props);
-    this.state = { ...INITIAL_STATE };
+    super(props)
+    this.state = {
+      email: this.props.email,
+      password: this.props.password,
+      error: null
+    }
   }
 
   onSubmit = event => {
@@ -47,23 +51,33 @@ class SignInFormBase extends Component {
     const isInvalid = password === '' || email === '';
     return (
       <form onSubmit={this.onSubmit}>
+        <div className="paddingemail">
         <input
+          className="email-login"
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
+        </div>
+        
+        <div className="paddingpassword">
         <input
+          className="password-login"
           name="password"
           value={password}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
-        <button disabled={isInvalid} type="submit">
+        </div>
+        <div>
+        <br />
+        <button className="signinbutton" disabled={isInvalid} type="submit">
           Sign In
         </button>
+        </div>
         {error && <p>{error.message}</p>}
       </form>
     );

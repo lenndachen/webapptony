@@ -144,3 +144,4 @@ How often have you had a sudden burst of confidence or felt like you are better 
 }
 
 export default withAuthentication(Diagnosis)
+
