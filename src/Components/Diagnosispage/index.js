@@ -3,8 +3,9 @@ import logo from '../../Assets/logos/logo.PNG'
 import {AuthUserContext} from '../Session'
 import withAuthentication from '../Session'
 
-var INITIAL_STATE = {linesOfButtons: Array(34).fill(null),
-                    authUserObj: null};          
+//var authUserObj = {};
+
+var INITIAL_STATE = {linesOfButtons: Array(34).fill(null)};          
 
 for (var i = 0; i < INITIAL_STATE["linesOfButtons"].length; i++)
      INITIAL_STATE["linesOfButtons"][i] = "";
@@ -13,15 +14,15 @@ class Diagnosis extends React.Component {
     constructor(props){
         super(props);   
         
-        this.state = {/*...INITIAL_STATE*/}
+        this.state = {...INITIAL_STATE}
     }
 
-    handleChange = (questionNum, event, authUserObj) => {
+    handleChange = (questionNum, event) => {
         
         var linesOfButtons = this.state.linesOfButtons.slice()
         linesOfButtons[questionNum] = event.target.value;
         
-        this.props.firebase.user(authUserObj.uid).set({
+        this.props.firebase.user(this.props.user.uid/*authUserObj.uid*/).set({
             linesOfButtons: linesOfButtons,
         })
 
@@ -30,7 +31,13 @@ class Diagnosis extends React.Component {
         })
     }
 
-   lineOfButtons (questionNum, inputStyle, authUserObj) {
+    /*setAuthUserObj (authUserObj) {
+        
+        authUserObj = authUserObj
+        //console.log('authUserObj.uid = ', authUserObj.uid)
+    }*/
+
+   lineOfButtons (questionNum, inputStyle) {
 
     var arr = []
         
@@ -41,7 +48,7 @@ class Diagnosis extends React.Component {
                 name={questionNum} 
                 value={i} 
                 checked = {this.state.linesOfButtons[questionNum] == i} 
-                onChange = {(event) => this.handleChange(questionNum, event, authUserObj)}>
+                onChange = {(event) => this.handleChange(questionNum, event, this.props.user)}>
                 </input>)
     }
 
@@ -49,16 +56,16 @@ class Diagnosis extends React.Component {
 }
 
 componentDidMount () {
+       console.log('PROPS', this.props)
+        this.props.firebase.db.ref('/users/' + this.props.user.uid/*authUserObj.uid*/ + '/linesOfButtons').once('value', snapshot => {
+            if (snapshot.val() !== null)
+                INITIAL_STATE.linesOfButtons = snapshot.val();
 
-    var authUserObj = this.state.authUserObj;
-
-    if (authUserObj !== null)
-        this.props.firebase.db.ref('/users/' + authUserObj.uid + '/linesOfButtons').once('value', snapshot => {
-            this.setState({linesOfButtons: snapshot.val()})})
+            this.setState({...INITIAL_STATE})})
 }
 
-createListOfQuestions (question, authUserObj) {
-
+createListOfQuestions (question) {
+    
     var arr = [];
 
     const inputStyle = {
@@ -67,14 +74,14 @@ createListOfQuestions (question, authUserObj) {
 
     for (var i = 0; i < question.length; i++)
         arr.push(<div className = {"Question " + String(i + 1)}><p>{question[i]}</p>
-        {this.lineOfButtons(i, inputStyle, authUserObj)}
+        {this.lineOfButtons(i, inputStyle)}
         </div>)
 
         return arr;
 } 
 
     render() {
-
+      
         const questions = 
 `I felt that my worry was out of control.
 I felt restless, agitated, frantic or tense.
@@ -133,8 +140,8 @@ How often have you had a sudden burst of confidence or felt like you are better 
             </div>
         </div>
     </form>
-    {this.createListOfQuestions(question, authUserObj)}
-    {() => {this.setState({authUserObj: authUserObj})}}
+    {/*this.setAuthUserObj(authUserObj)*/}
+    {this.createListOfQuestions(question)}
         <div className="submit-button">
             <button className="diagnosis-page-submit">Submit</button>
         </div>
