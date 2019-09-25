@@ -4,6 +4,7 @@ import * as ROUTES from '../../constants/routes';
 import writingdown from "../../Assets/picsforlandingpage/writingdown.png";
 import SignInPage from "../SignIn";
 import { SignInForm } from "../SignIn";
+import SignUpPage from "../SignUp";
 
 const INITIAL_STATE = {
   email: '',
@@ -25,6 +26,12 @@ class Landing extends React.Component{
  });  
   }
 
+  toggleSignUpreRoute = () => {
+    this.setState({  
+      signUpreRoute: !this.state.signUpreRoute
+ });  
+  }
+
   render() {
     
     return (<div className="row">
@@ -37,7 +44,7 @@ class Landing extends React.Component{
             <div className="signinpopup">
                 <button className="inside-pic-signin" onClick={this.toggleSignInPopup}>Sign In</button>
             </div>
-            <div className="">
+            <div className="inside-popupbox">
           {this.state.signInOpen && 
             <div className="signin-modal" >
                <SignInForm 
@@ -46,7 +53,9 @@ class Landing extends React.Component{
                 error={null}
                 />
               <div className="padding-button">
-              <button className="cancelbutton" onClick={this.toggleSignInPopup} >Cancel</button>   
+              <div className="signup-linkpopup" ><Link className="link-to-sign-up" to={ROUTES.SIGN_UP}>Sign Up</Link></div>
+              <div className="forgotpassword-linkpopup"> <Link className="linktoforgotpassword" to={ROUTES.PASSWORD_FORGET}>Forgot password?</Link></div>
+              <button className="cancelbutton" onClick={this.toggleSignInPopup}>Cancel</button>   
               </div>   
             </div>}
         </div>
