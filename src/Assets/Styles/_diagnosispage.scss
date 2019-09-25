@@ -1,5 +1,8 @@
-.Name{
+.wordname{
     font-size: 12px;
+    position: relative;
+    top: -10px;
+    padding: 20px;
 }
 
 .radiobuttons {
@@ -19,11 +22,11 @@
     .header {
         margin: 0;
         padding: 0;
-        background-color: blue;
     }
 
     .title-testdiagnosis{
         float: left;
+        padding: 20px;
     }
 
     .logo-testdiagnosis {
@@ -40,6 +43,53 @@
         margin-right: 30px;
         margin-top: 90px;
         box-shadow: .5px .5px;
+        position: relative;
+        top: -31px;
     }
-    
+}
+
+.diagnosis-page-submit {
+    width: 200px;
+    position: relative;
+    top: 30px;
+
+}
+
+.submit-button {
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    grid-row: 2 / 4;
+}
+
+.together {
+    grid-row: span 2 / 7;
+}
+
+.two {
+  display: grid;
+  grid-template-areas: "Questions Radio-Buttons";
+  height: 200px;
+  grid-template-columns: 200px;
+  grid-template-rows: repeat(6, 1fr);
+  text-align: center;
+  margin: 0 40%;
+}
+
+.questions {
+    padding-left: 18%;
+    grid-area: "Questions";
+
+}
+
+.submit-button {
+    grid-area: "Radio-Buttons";
+    padding-bottom: 10px;
+    padding-top: 20px;
+}
+
+.textname {
+    height: 20pt;
 }
