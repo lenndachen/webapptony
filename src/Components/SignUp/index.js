@@ -6,9 +6,11 @@ import { FirebaseContext } from '../Firebase';
 import { withRouter } from 'react-router-dom';
 
 const SignUpPage = () => (
-  <div>
-    <h1>SignUp</h1>
+  <div className="spacesignup">
+  <div className="divsignuppage">
+    <h1 className="signupformtitle"><div className="divsignupformtitle">Sign Up Form</div></h1>
     <SignUpForm />
+  </div>
   </div>
 );
 
@@ -68,36 +70,52 @@ class SignUpFormBase extends Component {
       username === '';
 
     return (
-      <form onSubmit={this.onSubmit}>
-                <input
+      <form className="formsignup" onSubmit={this.onSubmit}>
+          <p>Name </p>
+          <br />
+          <input
+          className="usernamesignup"
           name="username"
           value={username}
           onChange={this.onChange}
           type="text"
           placeholder="Full Name"
         />
+        <br />
+        <p>Email </p>
+          <br />
         <input
+          className="emailsignup"
           name="email"
           value={email}
           onChange={this.onChange}
           type="text"
           placeholder="Email Address"
         />
+        <br />
+        <p>Password </p>
+        <br />
         <input
+          className="passwordsignup"
           name="passwordOne"
           value={passwordOne}
           onChange={this.onChange}
           type="password"
           placeholder="Password"
         />
+        <br />
+        <p>Reenter Password</p>
+        <br />
         <input
+          className="passwordtwosignup"
           name="passwordTwo"
           value={passwordTwo}
           onChange={this.onChange}
           type="password"
           placeholder="Confirm Password"
         />
-        <button disabled={isInvalid} type="submit">Sign Up</button>
+        <br />
+        <button className="submitsignupbtn" disabled={isInvalid} type="submit">Sign Up</button>
         {error && <p>{error.message}</p>}
       </form>
     );
