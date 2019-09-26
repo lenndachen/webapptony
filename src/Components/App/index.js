@@ -18,7 +18,7 @@ import DiagnosisPage from '../Diagnosispage';
 import Navigation from '../Navigation';
 import Resourcespage from '../Resources';
 import Diagnose from '../Diagnosispage'
-
+import Submitbutton from "../Submittd";
 
 class App extends Component {
   constructor(props) {
@@ -55,6 +55,7 @@ class App extends Component {
       <Route path={ROUTES.TALK_ABOUT_DAY} component={TalkAboutYourDay} />
       <Route path={ROUTES.DIAGNOSIS_PAGE} component={DiagnosisPage} />
       <Route path={ROUTES.SIGN_OUT} component={SignOutButton} />
+      <Route path={ROUTES.SUBMITTD} component={Submitbutton} />
   </Router>
     );
   }

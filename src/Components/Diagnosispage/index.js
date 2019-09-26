@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 
 class Diagnosis extends React.Component {
     constructor(props){
@@ -107,7 +109,7 @@ How often have you had a sudden burst of confidence or felt like you are better 
         </div>
      </form>
      <div> {this.createListOfQuestions(question)} </div>
-     <button className="diagnosis-submitbutton">Submit </button>
+     <button className="diagnosis-submitbutton"><Link to={ROUTES.SUBMITTD}>Submit</Link></button>
      </div>
     );
     

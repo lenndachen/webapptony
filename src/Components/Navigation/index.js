@@ -27,7 +27,7 @@ const Navigation = ({ authUser }) => {
 
     <ul className="links-component">
       <li>
-        <Link className="link-buttons" to={ROUTES.MENU}>Menu TEST</Link>
+        <Link className="link-buttons" to={ROUTES.MENU}>Menu</Link>
       </li>
         <li>
             <Link to={ROUTES.ADMIN} className="link-buttons hidden-admin">Admin</Link>
