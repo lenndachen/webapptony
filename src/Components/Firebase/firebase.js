@@ -42,8 +42,8 @@ class Firebase {
 
   //*** message **
 
-  userTestAndScore = uid => this.db.ref(`userTestAndScore/${uid}`);
-  userTestAndScore = () => this.db.ref('userTestAndScore');
+  talkAboutDay = uid => this.db.ref(`talkaboutdaypage/${uid}`);
+  //userTestAndScore = () => this.db.ref('talkaboutdaypage');
 }
 
 export default Firebase;

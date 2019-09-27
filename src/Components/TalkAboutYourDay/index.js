@@ -16,61 +16,53 @@ class TalkAboutYourDay extends React.Component {
       this.state = {...INITIAL_STATE}
     }
 
-    handleSliderChange (e) {
+    updateDatabase = (name, value) => {
+      INITIAL_STATE[name] = value
+      console.log('LOG INITIAL STATE', INITIAL_STATE)
+      this.props.firebase.talkAboutDay(this.props.user.uid).set({...INITIAL_STATE})
+      
+    }
 
-      var obj = this.state
+    handleSliderChange (e) {
       this.setState({[e.target.name]: e.target.value})
-      this.props.firebase.user(this.props.user.uid).set({
-        ...obj,
-    })
+      this.updateDatabase(e.target.name, e.target.value)
     }
 
     handleCheckboxChange (e) {
-      var obj = this.state
       this.setState({[e.target.name]: e.target.checked})
-      this.props.firebase.user(this.props.user.uid).set({
-        ...obj,})
+     this.updateDatabase(e.target.name, e.target.checked)
     }
 
     handleRadioButtonAndTextBoxChange (e) {
-      var obj = this.state
-      this.props.firebase.user(this.props.user.uid).set({
-          ...obj})
       this.setState({[e.target.name]: e.target.value})
+      this.updateDatabase(e.target.name, e.target.value)
     }
 
     componentDidMount () {
-      this.props.firebase.db.ref('/users/' + this.props.user.uid + '/talkaboutday').once('value', snapshot => {
+      //this.updateDatabase()
+      this.props.firebase.talkAboutDay(this.props.user.uid).once('value', snapshot => {
         if (snapshot.val() !== null)
             INITIAL_STATE = snapshot.val();
 
         this.setState({...INITIAL_STATE})})
-        console.log('authUser', this.props.user.uid)
     }
 
-    /*componentWillUnmount () {
-      var rangeSlider = this.state.rangeSlider
-        
-        this.props.firebase.user(this.props.user.uid).set({
-            rangeSlider: rangeSlider,
-        })
-    }*/
 
   render () {
 
     var feelingsCheckboxes = feelings.map(feeling => {
     
       return(<div>
-        <input type="checkbox" name={feeling} checked = {this.state.feeling}
+        <input type="checkbox" name={feeling} checked = {this.state[feeling]}
         onChange={(e) => this.handleCheckboxChange(e)}></input> {feeling}<br></br>
       </div>)
     }
     )
     
     var resourcesCheckboxes = resources.map(resource => {
-    
+    console.log("RESOURCES",this.state.resource)
       return(<div>
-        <input type="checkbox" name={resource} checked = {this.state.resource}
+        <input type="checkbox" name={resource} checked = {this.state[resource]}
         onChange={(e) => this.handleCheckboxChange(e)}></input> {resource}<br></br>
       </div>)
     }
@@ -106,7 +98,9 @@ class TalkAboutYourDay extends React.Component {
 
     <div>Do you need anything from me resource wise?</div>
       {resourcesCheckboxes}
-  </div>);
+      {/*this.updateDatabase()*/}
+  </div>
+  );
   }
 }
 
