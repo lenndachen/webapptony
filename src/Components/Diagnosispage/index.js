@@ -2,6 +2,8 @@ import React from 'react'
 import logo from '../../Assets/logos/logo.PNG'
 import {AuthUserContext} from '../Session'
 import withAuthentication from '../Session'
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 
 var INITIAL_STATE = {linesOfButtons: Array(34).fill(null)};          
 
@@ -113,7 +115,8 @@ How often have you had a sudden burst of confidence or felt like you are better 
     var question = questions.split(/\r?\n/)
     var arr = [];
 
-        return (<AuthUserContext.Consumer>{authUserObj => (
+        return (
+        <AuthUserContext.Consumer>{authUserObj => (
     <div className="wholeform">
     <form>
         <div>
@@ -128,18 +131,29 @@ How often have you had a sudden burst of confidence or felt like you are better 
         </div>
             </div>
             <div className="questions">
+                <div className="wordscontainer">
+                    <p className="words words1">Never</p>
+                    <br />
+                    <p className="words words2">Few Times</p>
+                    <br />
+                    <p className="words words3">Couple times</p>
+                    <br />
+                    <p className="words words4">Sometimes</p>
+                    <br />
+                    <p className="words words5">Always</p>
+                </div>
                 {arr}
             </div>
         </div>
     </form>
     {/*this.setAuthUserObj(authUserObj)*/}
     {this.createListOfQuestions(question)}
-        <div className="submit-button">
-            <button className="diagnosis-page-submit">Submit</button>
-        </div>
+        
+            <button className="diagnosis-submitbutton"><Link to={ROUTES.SUBMITTD}>Submit</Link></button>
+        
     </div>
     )}</AuthUserContext.Consumer>)
-    }
+        }
 }
 
 export default withAuthentication(Diagnosis)
