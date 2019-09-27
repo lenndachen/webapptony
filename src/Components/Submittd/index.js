@@ -10,7 +10,7 @@ const submitbutton = () => (
     <p>According to the assessement of numbers of 0-10 = No Worries
     11-25= start talking about it 26-41</p>
     {/* {SignUpPage this.props.username} */}
-    
+
   </div>
 );
 
