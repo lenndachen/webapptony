@@ -5,6 +5,7 @@ body {
     .photo4 {
         margin: auto;
         width: 1000px;
+        height: 200px;
         border: 3px solid pale;
         padding: 10px;
         display: block;
@@ -78,12 +79,13 @@ body {
   display: flex;
   position: relative;
   right: 20%;
+  bottom: 9px;
 }
 
 .forgotpassword-linkpopup {
   display: flex;
   position: relative;
-  bottom: 15px;
+  bottom: 25px;
 }
 
 

@@ -34,10 +34,12 @@
 }
 
 .errormessage {
-  float: left;
-  justify-content: center;
+  max-width: 100%;
+  height: auto;
   position: absolute;
-  left: 20%;
-  bottom: 30%;
-  color:red;
+  left: 50%;
+  color: red;
+  padding-top: 10px;
+  padding-bottom: px;
+  transform: translateX(-50%)
 }
