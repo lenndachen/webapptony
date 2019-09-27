@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../../constants/routes';
 
 class Diagnosis extends React.Component {
     constructor(props){
@@ -81,20 +83,33 @@ How often have you had a sudden burst of confidence or felt like you are better 
     <div className="wholeform">
     <form>
         <div className="two">
-            <div className="header">
-                <h4 className="title-testdiagnosis">Mental Illness Diagnosis</h4>
+                <div className="header">
+                    <h4 className="title-testdiagnosis">Mental Illness Diagnosis</h4>
+                </div>
+            <div className="together">
+                <div className="wordname">Name</div> 
+                <input className="textname" type="text" name="name" placeholder="Your name goes here." /> 
             </div>
-        <div className="together">
-            <div className="wordname">Name</div> 
-            <input className="textname" type="text" name="name" placeholder="Your name goes here." /> 
         </div>
+        <div className="questionscontainer">
             <div>
-                {arr}
+                <div className="wordscontainer">
+                    <p className="words words1">Never</p>
+                    <br />
+                    <p className="words words2">Few Times</p>
+                    <br />
+                    <p className="words words3">Couple times</p>
+                    <br />
+                    <p className="words words4">Sometimes</p>
+                    <br />
+                    <p className="words words5">Always</p>
+                </div>
+                    {arr}
             </div>
         </div>
      </form>
      <div> {this.createListOfQuestions(question)} </div>
-     <button className="diagnosis-submitbutton">Submit </button>
+     <button className="diagnosis-submitbutton"><Link to={ROUTES.SUBMITTD}>Submit</Link></button>
      </div>
     );
     

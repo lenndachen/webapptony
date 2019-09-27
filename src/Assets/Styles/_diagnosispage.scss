@@ -76,3 +76,13 @@
     position: relative;
     bottom: 5px;
 }
+
+.wordscontainer {
+    display: flex;
+    flex-wrap: wrap;
+    float: right;
+}
+
+.words {
+    padding: 10px;
+}

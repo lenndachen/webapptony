@@ -12,3 +12,4 @@ export const PASSWORD_FORGET = '/pw-forget';
 export const TALK_ABOUT_DAY = '/talkaboutday';
 export const DIAGNOSIS_PAGE = '/diagnosis-page';
 export const TEST_DIAGNOSE = '/testdiagnose'
+export const SUBMITTD = '/submittd';
