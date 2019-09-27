@@ -4,7 +4,7 @@ import Landing from '../Landing';
 import SignUp from '../SignUp';
 import SignIn from '../SignIn';
 import SignOutButton from '../SignOut';
-import PasswordForget from '../PasswordForget';
+import PasswordForgetPage from '../PasswordForget';
 import Menu from '../SignedInMenu';
 import Account from '../Account';
 import Admin from '../Admin';
@@ -45,10 +45,10 @@ class App extends Component {
       <Route exact path={ROUTES.LANDING} component={Landing} />
       <Route path={ROUTES.SIGN_UP} component={SignUp} />
       <Route path={ROUTES.SIGN_IN} component={SignIn} />
-      <Route path={ROUTES.OPTIONS} component={PasswordForget} />
+      <Route path={ROUTES.OPTIONS} component={PasswordForgetPage} />
       <Route path={ROUTES.TEST_DIAGNOSE} component={Diagnose} />
       <Route path={ROUTES.RESOURCES} component={Resourcespage} />
-      <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
+      <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
       <Route path={ROUTES.MENU} component={Menu} />
       <Route path={ROUTES.ACCOUNT} component={Account} />
       <Route path={ROUTES.ADMIN} component={Admin} />

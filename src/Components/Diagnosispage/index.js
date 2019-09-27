@@ -1,44 +1,81 @@
 import React from 'react'
+import logo from '../../Assets/logos/logo.PNG'
+import {AuthUserContext} from '../Session'
+import withAuthentication from '../Session'
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
 
+var INITIAL_STATE = {linesOfButtons: Array(34).fill(null)};          
+
+for (var i = 0; i < INITIAL_STATE["linesOfButtons"].length; i++)
+     INITIAL_STATE["linesOfButtons"][i] = "";
+       
 class Diagnosis extends React.Component {
     constructor(props){
-        super(props);
-        this.state = {
-            user: []
-             }
+        super(props);   
+        
+        this.state = {...INITIAL_STATE}
+    }
+
+    handleChange = (questionNum, event) => {
+        
+        var linesOfButtons = this.state.linesOfButtons.slice()
+        linesOfButtons[questionNum] = event.target.value;
+        
+        this.props.firebase.user(this.props.user.uid).set({
+            linesOfButtons: linesOfButtons,
+        })
+
+        this.setState({
+                linesOfButtons: linesOfButtons,
+        })
     }
 
    lineOfButtons (questionNum, inputStyle) {
 
-        var arr = []
+    var arr = []
+        
+    for (var i = 1; i <= 5; i++)
+    {    
+        arr.push(<input type="radio" 
+                style={inputStyle} 
+                name={questionNum} 
+                value={i} 
+                checked = {this.state.linesOfButtons[questionNum] == i} 
+                onChange = {(event) => this.handleChange(questionNum, event, this.props.user)}>
+                </input>)
+    }
+
+    return arr;
+}
+
+componentDidMount () {
+       
+        this.props.firebase.db.ref('/users/' + this.props.user.uid + '/linesOfButtons').once('value', snapshot => {
+            if (snapshot.val() !== null)
+                INITIAL_STATE.linesOfButtons = snapshot.val();
+
+            this.setState({...INITIAL_STATE})})
+}
+
+createListOfQuestions (question) {
     
-        for (var i = 0; i < 5; i++)
-            arr.push(<input type="radio" 
-                    style={inputStyle} name={questionNum} value={String(i + 1)} /*onChange = {}*/></input>)
-    
+    var arr = [];
+
+    const inputStyle = {
+        float: 'right',
+      };
+
+    for (var i = 0; i < question.length; i++)
+        arr.push(<div className = {"Question " + String(i + 1)}><p>{question[i]}</p>
+        {this.lineOfButtons(i, inputStyle)}
+        </div>)
+
         return arr;
-    }
+} 
 
-    createListOfQuestions (question) {
-
-        var arr = [];
-
-        const inputStyle = {
-            float: 'right',
-          };
-
-        for (var i = 0; i < question.length; i++)
-            arr.push(<div className = {"Question " + String(i + 1)}><p>{question[i]}</p>
-            {this.lineOfButtons("Question " + String(i + 1), inputStyle)}
-            </div>)
-
-            return arr;
-    }
-    
     render() {
-
+      
         const questions = 
 `I felt that my worry was out of control.
 I felt restless, agitated, frantic or tense.
@@ -79,20 +116,21 @@ How often have you had a sudden burst of confidence or felt like you are better 
     var arr = [];
 
         return (
-
+        <AuthUserContext.Consumer>{authUserObj => (
     <div className="wholeform">
     <form>
-        <div className="two">
-                <div className="header">
-                    <h4 className="title-testdiagnosis">Mental Illness Diagnosis</h4>
-                </div>
-            <div className="together">
-                <div className="wordname">Name</div> 
-                <input className="textname" type="text" name="name" placeholder="Your name goes here." /> 
-            </div>
+        <div>
+            <div className="two">
+       <div className="header">
+        <h4 className="title-testdiagnosis">Mental Illness Diagnosis Test</h4>
+       </div>
+        <div className="together">
+            <label className = "Name"></label>
+            <div className="wordname">Name</div> 
+            <input className="textname" type="text" name="name" placeholder="name goes here"/>  
         </div>
-        <div className="questionscontainer">
-            <div>
+            </div>
+            <div className="questions">
                 <div className="wordscontainer">
                     <p className="words words1">Never</p>
                     <br />
@@ -104,17 +142,19 @@ How often have you had a sudden burst of confidence or felt like you are better 
                     <br />
                     <p className="words words5">Always</p>
                 </div>
-                    {arr}
+                {arr}
             </div>
         </div>
-     </form>
-     <div> {this.createListOfQuestions(question)} </div>
-     <button className="diagnosis-submitbutton"><Link to={ROUTES.SUBMITTD}>Submit</Link></button>
-     </div>
-    );
-    
-    }
+    </form>
+    {/*this.setAuthUserObj(authUserObj)*/}
+    {this.createListOfQuestions(question)}
+        
+            <button className="diagnosis-submitbutton"><Link to={ROUTES.SUBMITTD}>Submit</Link></button>
+        
+    </div>
+    )}</AuthUserContext.Consumer>)
+        }
 }
 
+export default withAuthentication(Diagnosis)
 
-export default Diagnosis;
