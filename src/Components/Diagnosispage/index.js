@@ -3,8 +3,6 @@ import logo from '../../Assets/logos/logo.PNG'
 import {AuthUserContext} from '../Session'
 import withAuthentication from '../Session'
 
-//var authUserObj = {};
-
 var INITIAL_STATE = {linesOfButtons: Array(34).fill(null)};          
 
 for (var i = 0; i < INITIAL_STATE["linesOfButtons"].length; i++)
@@ -22,7 +20,7 @@ class Diagnosis extends React.Component {
         var linesOfButtons = this.state.linesOfButtons.slice()
         linesOfButtons[questionNum] = event.target.value;
         
-        this.props.firebase.user(this.props.user.uid/*authUserObj.uid*/).set({
+        this.props.firebase.user(this.props.user.uid).set({
             linesOfButtons: linesOfButtons,
         })
 
@@ -30,12 +28,6 @@ class Diagnosis extends React.Component {
                 linesOfButtons: linesOfButtons,
         })
     }
-
-    /*setAuthUserObj (authUserObj) {
-        
-        authUserObj = authUserObj
-        //console.log('authUserObj.uid = ', authUserObj.uid)
-    }*/
 
    lineOfButtons (questionNum, inputStyle) {
 
@@ -56,8 +48,8 @@ class Diagnosis extends React.Component {
 }
 
 componentDidMount () {
-       console.log('PROPS', this.props)
-        this.props.firebase.db.ref('/users/' + this.props.user.uid/*authUserObj.uid*/ + '/linesOfButtons').once('value', snapshot => {
+       
+        this.props.firebase.db.ref('/users/' + this.props.user.uid + '/linesOfButtons').once('value', snapshot => {
             if (snapshot.val() !== null)
                 INITIAL_STATE.linesOfButtons = snapshot.val();
 
