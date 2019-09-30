@@ -4,6 +4,8 @@ import {AuthUserContext} from '../Session'
 import withAuthentication from '../Session'
 import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes';
+import { Submitbutton } from '../Submittd/index.js';
+import { withFirebase } from '../Firebase';
 
 var INITIAL_STATE = {linesOfButtons: Array(34).fill(null)};          
 
@@ -148,9 +150,9 @@ How often have you had a sudden burst of confidence or felt like you are better 
     </form>
     {/*this.setAuthUserObj(authUserObj)*/}
     {this.createListOfQuestions(question)}
-        
-            <button className="diagnosis-submitbutton"><Link to={ROUTES.SUBMITTD}>Submit</Link></button>
-        
+      <div>
+          <button><Link to={ROUTES.SUBMITTD}> Submit</Link></button>
+      </div>
     </div>
     )}</AuthUserContext.Consumer>)
         }
