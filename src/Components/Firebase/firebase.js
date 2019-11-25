@@ -11,10 +11,20 @@ const config = {
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
 };
 
+var firebaseConfig = {
+  apiKey: "AIzaSyDDTPX8pSYs38-rEA0k6TjvEoiIWLBr62Y",
+  authDomain: "webapptony.firebaseapp.com",
+  databaseURL: "https://webapptony.firebaseio.com",
+  projectId: "webapptony",
+  storageBucket: "webapptony.appspot.com",
+  messagingSenderId: "1070879329890",
+  appId: "1:1070879329890:web:5eafbceff23b3053ce0b3b",
+  measurementId: "G-8NC22Y334W"
+};
 class Firebase {
   constructor() {
     
-    app.initializeApp(config);
+    app.initializeApp(firebaseConfig);
 
     this.auth = app.auth();
     this.db = app.database()
